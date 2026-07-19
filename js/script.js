@@ -1,30 +1,40 @@
 console.log("Morfeo iniciado.");
 
-const starsContainer = document.getElementById("stars");
+/* -------------------- */
+/* CREAR ESTRELLAS */
+/* -------------------- */
 
-for(let i = 0; i < 200; i++){
+const stars = document.getElementById("stars");
+
+const STAR_COUNT = 250;
+
+for(let i = 0; i < STAR_COUNT; i++){
 
     const star = document.createElement("div");
 
-    star.classList.add("star");
+    star.className = "star";
 
     const size = Math.random() * 3 + 1;
 
     star.style.width = size + "px";
     star.style.height = size + "px";
 
-    star.style.left = Math.random() * 100 + "%";
-    star.style.top = Math.random() * 100 + "%";
+    star.style.left = Math.random() * window.innerWidth + "px";
+    star.style.top = Math.random() * window.innerHeight + "px";
 
-    star.style.opacity = Math.random();
+    star.style.animationDelay = Math.random() * 4 + "s";
 
-    starsContainer.appendChild(star);
+    stars.appendChild(star);
 
 }
 
+/* -------------------- */
+/* BOTÓN */
+/* -------------------- */
+
 const enterButton = document.getElementById("enterButton");
 
-enterButton.addEventListener("click", () => {
+enterButton.addEventListener("click",()=>{
 
     alert("Bienvenido a Morfeo.");
 
