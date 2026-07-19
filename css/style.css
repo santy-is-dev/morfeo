@@ -1,94 +1,44 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* RESET */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-body {
+body{
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
 
-    height: 100vh;
+    background:
+    linear-gradient(
+        180deg,
+        #02040f 0%,
+        #08132b 45%,
+        #131f48 100%
+    );
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width:100vw;
+    height:100vh;
 
-    background: linear-gradient(180deg,
-            #050816,
-            #0c1230,
-            #161f48);
+    overflow:hidden;
 
-    color: white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-    overflow: hidden;
-    position: relative;
-
-}
-
-.hero{
+    color:white;
 
     position:relative;
 
-    z-index:1;
-
-    text-align:center;
-
-    max-width:700px;
-
-    padding:40px;
-
 }
 
-.hero h1 {
-
-    font-size: 64px;
-
-    margin-bottom: 20px;
-
-}
-
-.hero p {
-
-    font-size: 22px;
-
-    color: #d6dcff;
-
-    line-height: 1.6;
-
-    margin-bottom: 40px;
-
-}
-
-button {
-
-    padding: 16px 42px;
-
-    border: none;
-
-    border-radius: 999px;
-
-    background: white;
-
-    color: #111;
-
-    cursor: pointer;
-
-    font-size: 18px;
-
-    transition: .25s;
-
-}
-
-button:hover {
-
-    transform: scale(1.05);
-
-}
+/* ---------- ESTRELLAS ---------- */
 
 #stars{
 
     position:absolute;
+
     inset:0;
 
     z-index:0;
@@ -99,8 +49,86 @@ button:hover {
 
     position:absolute;
 
+    border-radius:50%;
+
     background:white;
 
-    border-radius:50%;
+    animation:twinkle 4s infinite ease-in-out;
+
+}
+
+@keyframes twinkle{
+
+    0%,100%{
+
+        opacity:.2;
+        transform:scale(.8);
+
+    }
+
+    50%{
+
+        opacity:1;
+        transform:scale(1.4);
+
+    }
+
+}
+
+/* ---------- HERO ---------- */
+
+.hero{
+
+    position:relative;
+
+    z-index:10;
+
+    text-align:center;
+
+    width:min(700px,90vw);
+
+}
+
+.hero h1{
+
+    font-size:5rem;
+
+    margin-bottom:20px;
+
+}
+
+.hero p{
+
+    font-size:1.3rem;
+
+    color:#d9dfff;
+
+    margin-bottom:45px;
+
+    line-height:1.6;
+
+}
+
+button{
+
+    padding:16px 42px;
+
+    border:none;
+
+    border-radius:999px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    background:white;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    transform:translateY(-3px);
 
 }
